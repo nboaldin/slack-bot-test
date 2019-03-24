@@ -16,7 +16,6 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 app.post("/", (req, res, next) => {
     let payload = req.body;
-    console.log(payload);
 
     if (payload.event.type === "app_mention") {
         axios.post('https://slack.com/api/chat.postMessage', { "channel": "CH815EK52", "text": "I do not compute. Please, be more specific. Remember, I am a robot."})
@@ -38,6 +37,5 @@ app.post("/", (req, res, next) => {
 });
 
 app.listen(PORT, function(){
-  // Callback triggered when server is successfully listening. Hurray!
   console.log("Server listening on: http://localhost:%s", PORT);
 });
